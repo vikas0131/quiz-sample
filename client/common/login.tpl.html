@@ -1,0 +1,21 @@
+<div class="account-wall">
+	<form name="login" ng-submit="submit()" novalidate class="form-signin">
+		<div class="form-group">
+			<input type="email" class="form-control" name="loginEmail" ng-model="email" placeholder="email" required autofocus/>
+			<div ng-show="login.$submitted || login.loginEmail.$touched">
+		      <span class="error" ng-show="login.loginEmail.$error.required">Tell us your email.</span>
+		      <span class="error" ng-show="login.loginEmail.$error.email">This is not a valid email.</span>
+		    </div>
+		</div>
+		<div class="form-group">
+			<input type="password" name="loginPassword" class="form-control" ng-model="password" placeholder="password" required/>
+			<div ng-show="login.$submitted || login.loginPassword.$touched">
+		      <span class="error" ng-show="login.loginPassword.$error.required">Tell us your password.</span>
+		      <span class="error" ng-show="login.loginPassword.$error.password">This is not a valid password.</span>
+		    </div>
+		</div>
+		<div class="form-group">
+			<input type="submit" value="{{submitBtnText}}" class="btn btn-default btn-block submitBtn" />
+		</div>
+	</form>
+</div>
