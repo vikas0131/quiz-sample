@@ -12,10 +12,10 @@
   .controller('LoginCtrl', ['$scope','$state',function ($scope,$state) {
   	$scope.submitBtnText = "Login";
   	$scope.submit = function() {
-  		if(login.$valid) {
+  		if($scope.login.$valid) {
   			$state.go('myApp.quiz.questions');
   		} else {
-  		alert('Invalid Credentials');
+  		alert('Invalid Credentials!');
   		}
   	}
   }])

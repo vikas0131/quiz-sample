@@ -12,7 +12,7 @@
   .controller('RegisterCtrl', ['$scope','$state',function ($scope,$state) {
     $scope.submitBtnText = "Register";
   	$scope.submit = function() {
-      if(login.$valid) {
+      if($scope.login.$valid) {
   		  $state.go('myApp.quiz.login');
       } else {
       alert('Invalid Credentials!')

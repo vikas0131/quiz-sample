@@ -1,6 +1,13 @@
-<div class="container-fluid">
-  <h2>Notes</h2>
-  <section>
-    {{ message }}
-  </section>
+<div class="center question"> 
+	{{question.questionNumber}}. {{question.questionText}}
+</div>
+<div class="account-wall">
+	<form name="login" ng-submit="submit();" novalidate class="form-signin">
+		<div class="form-group" ng-repeat="option in question.answerOptions">
+			<input type="radio" ng-model="$parent.selected" name="questionOption" ng-value="option.value" required>&nbsp;{{option.text}}</br>
+		</div>
+		<div class="form-group">
+			<input id="submit" type="submit" value="{{continueOrFinish}}" class="btn btn-default btn-block submitBtn" />
+		</div>
+	</form>
 </div>
